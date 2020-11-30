@@ -1,3 +1,6 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './main.scss';
 
-console.log('Hello world');
+window.addEventListener('hashchange', () => {
+    console.log(window.location.hash);
+})
