@@ -1,5 +1,5 @@
 const HTMLwebpackPlugin = require('html-webpack-plugin');
-const { Plugin } = require('webpack');
+// const { Plugin } = require('webpack');
 
 module.exports = {
     entry: "./src/main.js",
@@ -7,7 +7,24 @@ module.exports = {
         path: __dirname + '/dist',
         filename: "bundle.js"
     },
+    module: {
+        rules: [
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                  // Creates `style` nodes from JS strings
+                  "style-loader",
+                  // Translates CSS into CommonJS
+                  "css-loader",
+                  // Compiles Sass to CSS
+                  "sass-loader",
+                ],
+            }
+        ]
+    },
     plugins: [
-        new HTMLwebpackPlugin()
+        new HTMLwebpackPlugin({
+            template: './src/index.html'
+        })
     ] 
 }
