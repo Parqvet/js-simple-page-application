@@ -1,4 +1,4 @@
-import Home from '../controllers/index.controller';
+import { pages } from '../controllers/index';
 
 let content = document.getElementById('root');
 
@@ -6,14 +6,14 @@ const router = (route) => {
     content.innerHTML = '';
     switch (route) {
         case '#/':{
-            return content.appendChild(Home());
+            return content.appendChild(pages.home);
         }
         case '#/posts':
-            return console.log('post!');
+            return content.appendChild(pages.post);
         case '#/products':
-            return console.log('products!');
+            return content.appendChild(pages.post);
         default:
-            return console.log('404');
+            return content.appendChild(pages.notFound);
     }
 }
 
