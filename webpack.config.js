@@ -23,6 +23,10 @@ module.exports = {
                   // Compiles Sass to CSS
                   "sass-loader",
                 ],
+            },
+            {
+                test: /\.html$/i,
+                loader: 'html-loader',
             }
         ]
     },
